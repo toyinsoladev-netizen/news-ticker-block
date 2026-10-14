@@ -1,0 +1,24 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "news-ticker-block/news-ticker",
+	"title": "News Ticker",
+	"category": "text",
+	"icon": "megaphone",
+	"description": "A scrolling ticker of promotions scheduled by start and end date.",
+	"keywords": [ "ticker", "promotion", "announcement", "banner" ],
+	"textdomain": "news-ticker-block",
+	"attributes": {
+		"promotions": { "type": "array", "default": [] },
+		"backgroundColor": { "type": "string", "default": "#222222" },
+		"textColor": { "type": "string", "default": "#ffffff" },
+		"scrollSpeed": { "type": "number", "default": 15 }
+	},
+	"supports": {
+		"html": false
+	},
+	"editorScript": "news-ticker-block-editor",
+	"editorStyle": "news-ticker-block-editor-style",
+	"style": "news-ticker-block-style",
+	"viewScript": "news-ticker-block-view"
+}

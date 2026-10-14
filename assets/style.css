@@ -1,0 +1,81 @@
+.news-ticker {
+	overflow: hidden;
+	padding: 10px 0;
+	background-color: #222;
+	color: #fff;
+	font-weight: bold;
+}
+
+.news-ticker .ticker-track {
+	display: flex;
+	width: max-content;
+	white-space: nowrap;
+	will-change: transform;
+	animation-name: ntb-scroll;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+}
+
+/* The track holds two identical groups and scrolls by exactly one group (-50%).
+   The script repeats the set so each group is wider than the ticker, which keeps
+   the loop continuous even for a single short promotion. */
+.news-ticker .ticker-group {
+	flex: 0 0 auto;
+	display: flex;
+	align-items: center;
+}
+
+.news-ticker .ticker-set {
+	display: inline-block;
+}
+
+.news-ticker .ticker-item {
+	padding: 0 1.5em;
+}
+
+.news-ticker .ticker-item a {
+	color: inherit;
+}
+
+.news-ticker .ticker-item a:hover,
+.news-ticker .ticker-item a:focus {
+	text-decoration: none;
+}
+
+.news-ticker .ticker-separator {
+	opacity: 0.6;
+}
+
+.news-ticker:hover .ticker-track,
+.news-ticker:focus-within .ticker-track {
+	animation-play-state: paused;
+}
+
+@keyframes ntb-scroll {
+	from { transform: translateX(0); }
+	to   { transform: translateX(-50%); }
+}
+
+/* Reduced motion: no scrolling. Show a single static, wrapping set so every
+   active promotion stays readable. */
+@media (prefers-reduced-motion: reduce) {
+	.news-ticker .ticker-track {
+		animation: none;
+		display: block;
+		width: auto;
+		white-space: normal;
+	}
+
+	.news-ticker .ticker-group {
+		display: block;
+	}
+
+	.news-ticker .ticker-set {
+		display: inline;
+	}
+
+	.news-ticker .ticker-group:nth-child(n+2),
+	.news-ticker .ticker-set:nth-child(n+2) {
+		display: none;
+	}
+}

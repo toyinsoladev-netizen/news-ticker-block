@@ -1,0 +1,72 @@
+/* Empty state inside the ticker box */
+.news-ticker .ntb-empty {
+	padding: 0 1.5em;
+	font-weight: normal;
+	opacity: 0.7;
+}
+
+/* Promotions that wouldn't show on the front end right now */
+.news-ticker .ticker-item.is-inactive {
+	opacity: 0.4;
+}
+
+/* Sidebar */
+.ntb-label {
+	margin: 12px 0 4px;
+	font-weight: 600;
+}
+
+.ntb-hint {
+	margin: 8px 0 0;
+	color: #8a1f1f;
+	font-size: 12px;
+}
+
+.ntb-list-item {
+	display: flex;
+	flex-direction: column;
+	gap: 6px;
+	padding: 10px 8px;
+	border-bottom: 1px solid #ddd;
+}
+
+.ntb-list-item.is-editing {
+	background: #f0f6fc;
+	outline: 1px solid #2271b1;
+}
+
+.ntb-list-text {
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+}
+
+.ntb-list-meta {
+	font-size: 12px;
+	opacity: 0.7;
+	word-break: break-all;
+}
+
+.ntb-list-actions {
+	display: flex;
+	gap: 12px;
+}
+
+.ntb-badge {
+	align-self: flex-start;
+	margin-top: 4px;
+	padding: 1px 8px;
+	border-radius: 10px;
+	font-size: 11px;
+	background: #eee;
+}
+
+.ntb-badge.is-active    { background: #d7f5dd; color: #0a5c1e; }
+.ntb-badge.is-scheduled { background: #fff3cd; color: #7a5b00; }
+.ntb-badge.is-expired   { background: #f3d6d6; color: #8a1f1f; }
+
+.ntb-form-buttons {
+	display: flex;
+	gap: 8px;
+	margin-top: 12px;
+}
